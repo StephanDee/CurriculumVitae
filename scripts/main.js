@@ -31,6 +31,28 @@ function init() {
     // this.test_7(q1); // Output should be 3
     // const q2 = [2, 5, 1, 3, 4];
     // this.test_7(q2); // Output should be Too chaotic
+
+    // Dictionaries and HashMaps
+    // const magazine = ["ive", "got", "a", "lovely", "bunch", "of", "coconuts"];
+    // const note = ["ive", "got", "some", "coconuts"];
+    // this.test_8(magazine, note); // Output should be "No"
+
+    // Two String
+    // const s1 = "coconuts";
+    // const s2 = "columbia";
+    // console.log(this.test_9(s1, s2));
+
+    // Count Triplets
+    // const arr = [1, 2, 2, 4];
+    // const r = 2; // Output should be 2
+    // const arr = [1, 3, 9, 9, 27, 81];
+    // const r = 3; // Output should be 6
+    // console.log(this.test_10(arr, r));
+
+    // Mark and Toys
+    // const k = 50;
+    // const prices = [1, 12, 5, 111, 200, 1000, 10];
+    // console.log(test_11(prices, k)); // Output should be 4
 }
 
 /**
@@ -216,4 +238,147 @@ function test_7(q) {
     }
 
     console.log(counter);
+}
+
+/**
+ * HashTables: Ransom Note.
+ *
+ * @param magazine the magazine to copy the words
+ * @param note the handwritten notes to hide
+ */
+function test_8(magazine, note) {
+    if (magazine.length >= 1 && magazine.length <= 30000 &&
+        note.length >= 1 && note.length <= 30000) {
+        let noteMap = new Map();
+
+        for (let i = 0; i < note.length; i++) {
+            const word = note[i];
+
+            if (word.length >= 1 && word.length <= 5 && /^[a-zA-Z]+$/.test(word)) {
+                const index = magazine.indexOf(word);
+
+                if (index !== -1) {
+                    if (!noteMap.has(word)) {
+                        noteMap.set(word, true);
+                    }
+                } else {
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+        let magazineIsValid = magazineValidation(magazine);
+
+        if (note.length === noteMap.size && magazineIsValid) {
+            console.log("Yes");
+        } else {
+            console.log("No");
+        }
+    } else {
+        console.log("No");
+    }
+}
+
+/**
+ * Helper Function for test_8().
+ *
+ * @param magazine the magazine to copy the words
+ * @returns {boolean}
+ */
+function magazineValidation(magazine) {
+    for (let mName of magazine) {
+        if (mName.length >= 1 && mName <= 5 && !/^[a-zA-Z]+$/.test(mName)) {
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/**
+ * Two Strings.
+ *
+ * @param s1 substring to find a pair with substring of s2
+ * @param s2 substring to find a pair with substring of s1
+ */
+function test_9(s1, s2) {
+    for (let i = 0; i < s1.length; i++) {
+        const letter = s1.charAt(i);
+        if (s2.includes(letter)) {
+
+            return "YES"
+        }
+    }
+
+    return "NO";
+}
+
+/**
+ * Count Triplets.
+ *
+ * @param arr array of triplets
+ * @param r multiplication
+ * @returns {number}
+ */
+function test_10(arr, r) {
+    let t2 = new Map();
+    let t3 = new Map();
+    let result = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        let a = arr[i];
+        result += t3.has(a) ? t3.get(a) : 0;
+
+        if (i < arr.length - 1) {
+            if (t2.has(a)) {
+                t3.set(a * r, t3.has(a * r) ? t3.get(a * r) + t2.get(a) : t2.get(a));
+            }
+            t2.set(a * r, t2.has(a * r) ? t2.get(a * r) + 1 : 1);
+        }
+    }
+
+    return result;
+
+    // let tripletsArray = [];
+    //
+    // for (let i = 0; i < arr.length - 2; i++) {
+    //     for (let j = 1; j < arr.length - 1; j++) {
+    //         for (let k = 2; k < arr.length; k++) {
+    //             if ((arr[i] * r) === arr[j] && (r * arr[j]) === arr[k] &&
+    //                 arr[i] < arr[j] && arr[i] < arr[k] && arr[j] < arr[k]) {
+    //                 tripletsArray.push(arr[i].toString() +  arr[j].toString() +  arr[k].toString());
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    // return tripletsArray.length;
+}
+
+/**
+ * Mark and Toys.
+ *
+ * @param prices toy prices
+ * @param k amount of cash
+ * @returns {number}
+ */
+function test_11(prices, k) {
+    let cash = k;
+    let count = 0;
+
+    prices.sort((a, b) => a - b);
+    for (let i = 0; i < prices.length; i++) {
+        const price = prices[i];
+
+        if (price < cash) {
+            cash -= price;
+            count += 1;
+        } else {
+            break;
+        }
+    }
+
+    return count;
 }
