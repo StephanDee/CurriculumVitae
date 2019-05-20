@@ -87,7 +87,7 @@ textarea {
 }
 
 .main__article_content_center, .main__article_content_flexstart, .main__article_content_flexend, .main__article_content_spacearound,
-.footer__links_wrapper {
+.footer__center_wrapper {
     display: flex;
 }
 
@@ -114,7 +114,7 @@ textarea {
     margin-bottom: 70px;
 }
 
-.footer__links_wrapper {
+.footer__center_wrapper {
     justify-content: center;
 }
 
