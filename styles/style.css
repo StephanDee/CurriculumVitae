@@ -109,7 +109,7 @@ textarea {
 
 .footer__email_formular {
     background-color: white;
-    width: 400px;
+    max-width: 400px;
     padding: 20px;
     margin-bottom: 70px;
 }
