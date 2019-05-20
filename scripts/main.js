@@ -54,7 +54,7 @@ function init() {
     // const prices = [1, 12, 5, 111, 200, 1000, 10];
     // console.log(test_11(prices, k)); // Output should be 4
 
-    console.log(test_12());
+    // console.log(test_12());
 }
 
 /**

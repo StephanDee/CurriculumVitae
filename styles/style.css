@@ -36,6 +36,10 @@ footer {
     background-color: darkgrey;
 }
 
+textarea {
+    resize: none;
+}
+
 .header_box {
     background-color: rgba(0, 0, 0, 0.3);
     height: 100vh;
@@ -82,7 +86,8 @@ footer {
     max-width: 850px;
 }
 
-.main__article_content_center, .main__article_content_flexstart, .main__article_content_flexend, .main__article_content_spacearound {
+.main__article_content_center, .main__article_content_flexstart, .main__article_content_flexend, .main__article_content_spacearound,
+.footer__links_wrapper {
     display: flex;
 }
 
@@ -100,6 +105,25 @@ footer {
 
 .main__article_content_spacearound {
     justify-content: space-around;
+}
+
+.footer__email_formular {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    margin-bottom: 70px;
+}
+
+.footer__links_wrapper {
+    justify-content: center;
+}
+
+.footer__link {
+    margin: 8px;
+}
+
+.input_width {
+    width: 100% !important;
 }
 
 .language_bar_de {
