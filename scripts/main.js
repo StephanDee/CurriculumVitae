@@ -53,6 +53,8 @@ function init() {
     // const k = 50;
     // const prices = [1, 12, 5, 111, 200, 1000, 10];
     // console.log(test_11(prices, k)); // Output should be 4
+
+    console.log(test_12());
 }
 
 /**
@@ -87,7 +89,7 @@ function test_2(n, s) {
     let currentHeight = 0;
     let valleys = 0;
 
-    for (let i = 0; i < s.length - 1; i++) {
+    for (let i = 0; i < s.length; i++) {
         if (s.charAt(i) === "D") {
             if (currentHeight === sealevel) {
                 currentHeight -= 1; // Down
@@ -139,6 +141,22 @@ function test_3(c) {
  * @returns {number} number of 'a' occurrences
  */
 function test_4(s, n) {
+    let count = 0;
+    let countRest = 0;
+    const rest = n % s.length;
+
+    for (let i = 0; i < s.length; i++) { // 1 time throught s
+        if (s.charAt(i) === 'a') {
+            count += 1;
+
+            if (i < rest) {
+                countRest += 1;
+            }
+        }
+    }
+
+    return (((n - rest) / s.length) * count) + countRest;
+    /**
     const min = 1;
     const maxs = 100;
     const maxn = 1000000000000;
@@ -164,6 +182,7 @@ function test_4(s, n) {
     }
 
     return countA;
+    */
 }
 
 /**
