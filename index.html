@@ -295,7 +295,6 @@
                 <md-input-container class="input_width">
                     <label>Betreff</label>
                     <input name="subject" type="text" md-maxlength="100" maxlength="100" required ng-model="subject">
-                    <span>100 / {{ subject.length }}</span>
                     <div ng-messages="emailForm.subject.$error"
                          ng-show="emailForm.subject.$invalid && !emailForm.subject.$pristine">
                         <div ng-message="required">Betreffzeile ausfüllen</div>
@@ -306,7 +305,6 @@
                     <label>Nachricht</label>
                     <textarea type="text" md-maxlength="1000" maxlength="1000" name="message" rows="6" cols="50"
                               required ng-model="message"></textarea>
-                    <span>1000 / {{ message.length }} </span>
                     <div ng-messages="emailForm.message.$error"
                          ng-show="emailForm.message.$invalid && !emailForm.message.$pristine">
                         <div ng-message="required">Nachricht verfassen</div>
