@@ -130,7 +130,7 @@ textarea {
     vertical-align: middle;
     object-fit: cover;
     height: 500px;
-    width: 100%;
+    width: 100vw;
 }
 
 .language_bar_de {
