@@ -8,6 +8,10 @@ a {
     color: #000000;
 }
 
+a:hover {
+    color: #000000;
+}
+
 header {
     height: 100vh;
     width: 100%;
@@ -25,7 +29,12 @@ header a {
     color: #ffffff;
 }
 
-main {}
+header a:hover {
+    color: #ffffff;
+}
+
+main {
+}
 
 footer {
     padding: 50px 20px 50px 20px;
@@ -53,10 +62,44 @@ textarea {
 .header__avatar {
     vertical-align: middle;
     margin: 10px;
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     object-fit: cover;
+    animation-name: header__avatar_animation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes header__avatar_animation {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    50% {
+        width: 250px;
+        height: 250px;
+    }
+    100% {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+.header__text {
+    opacity: 1;
+    animation-name: header__text_animation;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes header__text_animation {
+    0%, 25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .main__article_container {
@@ -65,7 +108,12 @@ textarea {
 }
 
 .main__article {
-    /*background-color: lightgrey;*/
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.main__article_visible {
+    opacity: 1;
 }
 
 .main__article:nth-child(2n+0) {
@@ -144,4 +192,20 @@ textarea {
     border-right: 35px solid grey;
     width: 125px;
     padding: 5px;
+}
+
+@media only screen and (max-width: 849px) {
+    .main__article_content {
+        margin: auto;
+        padding: 20vh 8px 20vh 8px;
+        max-width: 400px;
+    }
+
+    .main__article_content_spacearound, .main__article_content_center {
+        display: block;
+    }
+
+    .main__text_center {
+        text-align: start;
+    }
 }

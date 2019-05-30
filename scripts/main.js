@@ -8,7 +8,6 @@ window.onload = function () {
  */
 function init() {
     console.log('Das Dokument wurde erfolgreich geladen.');
-
     // Warm Up
     // console.log(this.test_1(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])); // Output should be 3
     // console.log(this.test_2(8, "UDDDUDUU")); // Output should be 1
