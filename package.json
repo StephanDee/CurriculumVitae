@@ -1,0 +1,24 @@
+{
+  "name": "curriculumvitae",
+  "version": "1.0.0",
+  "description": "View CV: [stephandee.github.io/CurriculumVitae/](https://stephandee.github.io/CurriculumVitae/)",
+  "main": "index.html",
+  "dependencies": {
+    "angular-material": "^1.1.18",
+    "angular": "^1.7.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephanDee/CurriculumVitae.git"
+  },
+  "author": "Stephan Dünkel",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/StephanDee/CurriculumVitae/issues"
+  },
+  "homepage": "https://github.com/StephanDee/CurriculumVitae#readme"
+}

@@ -26,11 +26,11 @@ function isElementInViewport(element) {
  * Adds or removes Elements from Viewport.
  */
 function AddOrRemoveSelectorFromElementInViewport() {
-    let elements = document.querySelectorAll(".main__article");
+    let elements = document.querySelectorAll(".main__content_in_viewport");
 
     for (let i = 0; i < elements.length; i++) {
         if (isElementInViewport(elements[i])) {
-            elements[i].classList.add("main__article_visible");
+            elements[i].classList.add("main__content_in_viewport_visible");
         } else {
             // elements[i].classList.remove("main__articlce_visible");
         }
